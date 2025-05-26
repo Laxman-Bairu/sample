@@ -3,8 +3,8 @@
 This is a simple Angular 16 app that includes a login form built with Reactive Forms.
 
 ## 🚀 Features
-
-- Login form with username and password
+- Register 
+- Login with Registered username and password
 - Reactive Form validation
 - Angular 16 structure
 
