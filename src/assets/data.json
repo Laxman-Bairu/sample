@@ -1,0 +1,17 @@
+{
+    "status": "success",
+    "message": "This is a sample API response.",
+    "data":[ {
+        "id":1,
+      "username": "RamBairu",
+      "email": "RamBairu@example.com",
+      "age": 30
+    },
+    {
+        "id":2,
+      "username": "LaxmanBairu",
+      "email": "LaxmanBairu@example.com",
+      "age": 30
+    }]
+  }
+  

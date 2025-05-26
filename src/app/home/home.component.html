@@ -8,10 +8,19 @@
                 </div>
                 <div class="col">
                     <span class="fe-bold" style="font-size: 100px;">
-                        Hello
+                        Hello {{count()}}
                     </span>
+                    <div class="row">
+                        <button class=" col-3 btn btn-primary" (click)="inc()">INC</button>
+                        <button class="col-3 btn btn-danger" (click)="dec()">DEC</button>
+                    </div>
+                    
                 </div>
             </div>
+            <div *ngIf="isshow">
+                <app-contact [userName]="resData"></app-contact>
+            </div>
+            
         </div>
        
     </div>
