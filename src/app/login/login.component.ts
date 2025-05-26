@@ -23,15 +23,25 @@ export class LoginComponent {
   onSubmit() {
     if (this.loginForm.valid) {
       console.log('Login data:', this.loginForm.value);
-      this.service.GetByCode(this.loginForm.value.username).subscribe(data =>{
+      this.service.GetByCode(this.loginForm.value.username).subscribe({ next:data =>{
         this.userData = data;
-        if(this.userData.password === this.loginForm.value.password)
-          this.toast.success('Loggedin Successfully')
-          this.route.navigateByUrl('home')
-      })
+          if(this.userData.password === this.loginForm.value.password){
+            this.toast.success('Loggedin Successfully')
+            this.route.navigateByUrl('home')
+          }else{
+            this.toast.error('Invalid Username/Password')
+          }
+      },
+      error: (err) => {
+        if (err.status === 404) {
+          this.toast.error('Invalid Username/Password')
+        } else {
+          alert('An unexpected error occurred.');
+        }
+      }
+    })
     } else {
-      console.log('Form is invalid');
-      this.toast.error('Invalid Username/Password')
+      this.toast.error('Please Enter Username/Password')
       this.loginForm.markAllAsTouched(); // Shows validation messages
     }
   }

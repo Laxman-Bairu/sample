@@ -12,7 +12,7 @@ export class CommonService {
     return this.http.get('assets/data.json')
   }
   GetByCode(code:any):Observable<any>{
-    return this.http.get('http://localhost:3000/user' + '/' + code)
+      return this.http.get('http://localhost:3000/user' + '/' + code)
   }
   GetAll():Observable<any>{
     return this.http.get('http://localhost:3000/user')
