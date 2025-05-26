@@ -13,10 +13,10 @@ export class HomeComponent implements OnInit{
   isshow:Boolean = true;
 constructor(private CommonService:CommonService){}
   ngOnInit(): void {
-    this.CommonService.getData().subscribe(data => {
-      console.log(data);
-      this.resData = data.data[0];
-    })
+    // this.CommonService.getData().subscribe(data => {
+    //   console.log(data);
+    //   this.resData = data.data[0];
+    // })
   }
   inc(){
     this.count.set(this.count() + 1);
