@@ -27,25 +27,31 @@ export class LoginComponent {
         this.userData = data;
           if(this.userData.password === this.loginForm.value.password){
             this.toast.success('Loggedin Successfully')
+            localStorage.setItem('isLoggedIn','1');
             this.route.navigateByUrl('home')
           }else{
             this.toast.error('Invalid Username/Password')
+            localStorage.setItem('isLoggedIn','0');
           }
       },
       error: (err) => {
         if (err.status === 404) {
           this.toast.error('Invalid Username/Password')
+          localStorage.setItem('isLoggedIn','0');
         } else {
           alert('An unexpected error occurred.');
+          localStorage.setItem('isLoggedIn','0');
         }
       }
     })
     } else {
       this.toast.error('Please Enter Username/Password')
+      localStorage.setItem('isLoggedIn','0');
       this.loginForm.markAllAsTouched(); // Shows validation messages
     }
   }
   registerClick(){
+    localStorage.setItem('isLoggedIn','1');
     this.route.navigateByUrl('register')
   }
 }

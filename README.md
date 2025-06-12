@@ -17,5 +17,5 @@ npm install
 ng serve
 
 ``DB connection
-run - json-server --watch db.json
+run : json-server --watch db.json
 
